@@ -1,0 +1,112 @@
+
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.collection-container,
+.favorites-container {
+  background-color: var(--bg-red);
+  padding: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.collection-container div,
+.favorites-container div {
+  margin-left: .3rem;
+  margin-right: .3rem;
+  width: 200px;
+}
+
+.collection-container h2,
+.favorites-container h2 {
+  border: 2px dotted var(--poke-green);
+  text-align: center;
+  font-size: 2rem;
+  width: 100%;
+}
+
+.collection-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.collection-container>.pokemon-collection,
+.favorites-container>.pokemon-favorites {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.pokemon-collection div,
+.pokemon-favorites div {
+  padding: 1rem 0.8rem;
+  background-color: var(--poke-green);
+  border-radius: 10px;
+  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+  margin-bottom: 1rem;
+  min-width: 200px;
+}
+
+.pokemon-collection div h3, 
+.pokemon-favorites div h3 {
+  text-align: center;
+  font-size: 20px;
+}
+
+.rarity {
+  font-size: 14px;
+  font-weight: 500;
+  display:inline-block
+}
+
+.hp {
+  font-size: 20px;
+  float: right;
+  position: relative;
+}
+
+.hp::before {
+  background-image: url("heart-png.png");
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-size: 20px 20px;
+  position: absolute;
+  content: "";
+  left: -100%;
+  top: 20%;
+}
+
+.pokemon-collection div p, 
+.pokemon-favorites div p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pokemon-collection div button,
+.pokemon-favorites div button {
+  color: var(--font-dark);
+  background-color: var(--poke-light-red);
+  width: 50px;
+  height: 30px;
+}
+
+.running-total,
+.running-total-faves {
+  text-align: center;
+}
