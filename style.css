@@ -14,9 +14,13 @@ img {
   margin-bottom: 1rem;
 }
 
+.pokemon-collection div img {
+  position: relative;
+}
+
 .collection-container,
 .favorites-container {
-  background-color: var(--bg-red);
+  /* background-color: var(--bg-red); */
   padding: 50px;
   max-width: 1200px;
   margin: 0 auto;
@@ -50,16 +54,15 @@ img {
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .pokemon-collection div,
 .pokemon-favorites div {
-  padding: 1rem 0.8rem;
-  background-color: var(--poke-green);
-  border-radius: 10px;
-  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
-  margin-bottom: 1rem;
+  position: relative;
   min-width: 200px;
+  width: 280px;
+  margin: 10px auto;
 }
 
 .pokemon-collection div h3, 
@@ -71,7 +74,10 @@ img {
 .rarity {
   font-size: 14px;
   font-weight: 500;
-  display:inline-block
+  display:inline-block;
+  width: 100%;
+  padding-top: 10px;
+
 }
 
 .hp {
@@ -95,7 +101,7 @@ img {
 .pokemon-collection div p, 
 .pokemon-favorites div p {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .pokemon-collection div button,
@@ -103,10 +109,52 @@ img {
   color: var(--font-dark);
   background-color: var(--poke-light-red);
   width: 50px;
-  height: 30px;
+  width: 150px;
+  border-radius: 5px;
 }
 
 .running-total,
 .running-total-faves {
+  text-align: center;
+}
+
+
+/* card that is going to slide out
+height: 8rem;
+    border-top-right-radius: 30%;
+    border-top-left-radius: 30%;
+    position: relative;
+
+rarity will be the header for the card
+button will be placed out of the p :target
+color will be placed on left next to hp */
+
+
+
+/* animation for card slide */
+
+@keyframes slide-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+img:hover div.slide-card{
+  animation-name: slide-in;
+}
+
+.pokemon-collection div .slide-card,
+.pokemon-favorites div .slide-card
+ {
+  transition: .2s;
+  opacity: 0;
+  border-top-right-radius: 30%;
+  border-top-left-radius: 30%;
+  box-shadow: 0px -5px 4px rgb(0 0 0 / 18%);
+  position: absolute;
+  z-index: 1;
+  background-color: #f36f6f;
+  bottom: -5px;
+  padding-bottom: 10px;
   text-align: center;
 }
