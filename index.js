@@ -29,32 +29,36 @@ function domPainting (arr = []){
   pokemonCollection.innerHTML = ''
   console.log(arr) 
   let domElements = arr.forEach((item) => {
-    const h3tag = document.createElement("h3");
+    const slideCard = document.createElement('div')
+    // const h3tag = document.createElement("h3");
     const hpTag = document.createElement("span");
-    const rarityTag = document.createElement("span");
+    const rarityTag = document.createElement("h3");
     const imageTag = document.createElement("img");
     const pTag = document.createElement("p");
     const pokemonCard = document.createElement("div");
     const favoritesBtn = document.createElement("button");
     const star = "<i class='fas fa-star'></i>";
     
+    slideCard.setAttribute("class", "slide-card")
     hpTag.setAttribute("class", "hp")
     rarityTag.setAttribute("class", "rarity");
 
     favoritesBtn.innerHTML = star;
     pokemonCollection.append(pokemonCard);
     
-    h3tag.textContent = item.name;
     hpTag.textContent = item.hp;
     rarityTag.textContent = item.rarity;
     pTag.innerHTML = `${item.type}`;
     imageTag.src = `${item.picture}`;
 
-    pokemonCard.append(h3tag)
-    pokemonCard.append(rarityTag)
-    pokemonCard.append(hpTag)
-    pokemonCard.append(pTag)
-    pTag.append(favoritesBtn)
+    pokemonCard.append(slideCard)
+
+    // slideCard.append(h3tag)
+    slideCard.append(rarityTag)
+    pTag.append(hpTag)
+    slideCard.append(pTag)
+    slideCard.append(favoritesBtn)
+
     pokemonCard.append(imageTag)
 
     favoritesFilter(favoritesBtn)
@@ -82,7 +86,7 @@ function domPaintingFaves (arr = []){
     favoritesBtn.innerHTML = star;
     pokemonFavorites.append(pokemonCard);
     
-    h3tag.textContent = item.name;
+    // h3tag.textContent = item.name;
     hpTag.textContent = item.hp;
     rarityTag.textContent = item.rarity;
     pTag.innerHTML = `${item.type}`;
@@ -92,7 +96,7 @@ function domPaintingFaves (arr = []){
     pokemonCard.append(rarityTag)
     pokemonCard.append(hpTag)
     pokemonCard.append(pTag)
-    pTag.append(favoritesBtn)
+    pokemonCard.append(favoritesBtn)
     pokemonCard.append(imageTag)
 
     favoritesFilter(favoritesBtn)
