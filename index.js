@@ -39,7 +39,7 @@ function domPainting (arr = []){
     const favoritesBtn = document.createElement("button");
     const star = "<i class='fas fa-star'></i>";
     
-    slideCard.setAttribute("class", "slide-card")
+    slideCard.setAttribute("class", "slide-card animation")
     hpTag.setAttribute("class", "hp")
     rarityTag.setAttribute("class", "rarity");
 
@@ -51,6 +51,7 @@ function domPainting (arr = []){
     pTag.innerHTML = `${item.type}`;
     imageTag.src = `${item.picture}`;
 
+    pokemonCard.append(imageTag)
     pokemonCard.append(slideCard)
 
     // slideCard.append(h3tag)
@@ -58,8 +59,6 @@ function domPainting (arr = []){
     pTag.append(hpTag)
     slideCard.append(pTag)
     slideCard.append(favoritesBtn)
-
-    pokemonCard.append(imageTag)
 
     favoritesFilter(favoritesBtn)
     
@@ -266,7 +265,6 @@ pokeFetcher().then(function(result){
 }) 
 
 //function sections
-//for some reason i got a textnode that messed with my loops
 pokemonFavorites.removeChild(pokemonFavorites.firstChild)
 
 //I needed a function that would create the favorites object array so that I can easily apply array methods
